@@ -25,7 +25,7 @@ class InputValidator(BookClubBase):
         Raises:
             ValueError: If any rating is outside the range 0-5.
         """
-        for rating in self.__book_club_db[self.HEADER_NAMES[2]]:
+        for rating in self.__book_club_db[self.DF_INDEX.rating]:
             if rating < 0 or rating > 5:
                 raise ValueError(self.__error_messages["rating_range"])
         
@@ -43,16 +43,16 @@ class InputValidator(BookClubBase):
         return True
 
     def __validate_title_type(self):
-        for title in self.__book_club_db[self.HEADER_NAMES[0]]:
+        for title in self.__book_club_db[self.DF_INDEX.title]:
             if not isinstance(title, str):
                 raise ValueError(self.__error_messages["title_type"])
 
     def __validate_name_type(self):
-        for name in self.__book_club_db[self.HEADER_NAMES[1]]:
+        for name in self.__book_club_db[self.DF_INDEX.name]:
             if not isinstance(name, str):
                 raise ValueError(self.__error_messages["name_type"])
 
     def __validate_rating_type(self):
-        for rating in self.__book_club_db[self.HEADER_NAMES[2]]:
+        for rating in self.__book_club_db[self.DF_INDEX.rating]:
             if not isinstance(rating, (float, int)):
                 raise ValueError(self.__error_messages["rating_type"])
