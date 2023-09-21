@@ -1,3 +1,4 @@
+import pandas as pd
 from .db_base_class import BookClubBase
 
 class TextNormalizer(BookClubBase):
