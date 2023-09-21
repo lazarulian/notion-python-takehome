@@ -5,4 +5,4 @@ TEST_FILE = "tests/data/ratings.csv"
 
 c = BookClubAggregator(TEST_FILE)
 
-c.process_csv()
+print(c.get_analyzed_ratings())
