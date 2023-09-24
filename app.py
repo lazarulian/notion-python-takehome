@@ -7,11 +7,9 @@ if __name__ == "__main__":
     
     print("\nPlease input the filepath for your csv file 🗂️")
     FILE_PATH = input()
-    # FILE_PATH = "/Users/apurvashah/Downloads/ratings.csv"
 
     print("\nPlease input your database id number 🔢")
     DB_ID = input()
-    # DB_ID = "b135f875a3854996adb0cbe36e9af8d7"
 
     print("\nPlease input your notion integration key 🔢")
     NOTION_TOKEN = input()
@@ -23,7 +21,6 @@ if __name__ == "__main__":
     
     # Initialize Notion Worker
     database_agent = NotionDatabaseHooks(NOTION_TOKEN)
-    # database_agent = NotionDatabaseHooks("secret_XI7KkGByXGewog7tDRx9W3e0EXMxdLUsEEfVXbOIG1l")
 
     # Clear Notion Database
     database_agent.clear_database(DB_ID)

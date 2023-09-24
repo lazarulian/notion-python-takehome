@@ -40,8 +40,15 @@ class RatingsAnalyzer(BookClubBase):
         df = df.rename(columns={'index': self.DF_INDEX.title, 0: "number_favorites"})
         return df
 
+    import pandas as pd
+
     def get_average_ratings(self):
         average_ratings = {title: self.ratings_sum[title] / count for title, count in self.title_sum.items()}
         df = pd.DataFrame.from_dict(average_ratings, orient="index").reset_index()
         df = df.rename(columns={'index': self.DF_INDEX.title, 0: "average_rating"})
+        
+        # Round the values in the "average_rating" column to 2 decimal places
+        df['average_rating'] = df['average_rating'].round(2)
+        
         return df
+
