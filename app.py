@@ -6,12 +6,15 @@ if __name__ == "__main__":
     print("\nIntializing Book Club Analyzer 🧘\n")
     
     print("\nPlease input the filepath for your csv file 🗂️")
-    # FILE_PATH = input()
-    FILE_PATH = "/Users/apurvashah/Downloads/ratings.csv"
+    FILE_PATH = input()
+    # FILE_PATH = "/Users/apurvashah/Downloads/ratings.csv"
 
     print("\nPlease input your database id number 🔢")
     DB_ID = input()
     # DB_ID = "b135f875a3854996adb0cbe36e9af8d7"
+
+    print("\nPlease input your notion integration key 🔢")
+    NOTION_TOKEN = input()
     
     analysis_runner = BookClubAggregator(FILE_PATH)
     ratings = analysis_runner.get_analyzed_ratings()
@@ -19,7 +22,8 @@ if __name__ == "__main__":
     print("\nSuccessfully analyzed your data, sending to notion 🔎")
     
     # Initialize Notion Worker
-    database_agent = NotionDatabaseHooks("secret_XI7KkGByXGewog7tDRx9W3e0EXMxdLUsEEfVXbOIG1l")
+    database_agent = NotionDatabaseHooks(NOTION_TOKEN)
+    # database_agent = NotionDatabaseHooks("secret_XI7KkGByXGewog7tDRx9W3e0EXMxdLUsEEfVXbOIG1l")
 
     # Clear Notion Database
     database_agent.clear_database(DB_ID)
