@@ -16,7 +16,7 @@ class BookClubAggregator(BookClubBase):
         self.validator = InputValidator(self.__book_club_db)
         self.normalizer = TextNormalizer()
         self.janitor = DataCleanser()
-        self.terrance_tao = RatingsAnalyzer()
+        self.alan_turing = RatingsAnalyzer()
     
     def __process_csv(self):
         self.validator.validate_csv()
@@ -25,7 +25,7 @@ class BookClubAggregator(BookClubBase):
     
     def get_analyzed_ratings(self):
         self.__process_csv()
-        return self.terrance_tao.analyze_ratings(self.__book_club_db)
+        return self.alan_turing.analyze_ratings(self.__book_club_db)
     
     def get_club_data(self):
         # Returns the book club raw data
