@@ -36,17 +36,18 @@ At this stage, when prompted input:
 ## Short Answer Questions
 > Was there anything you got stuck on, and if so what did you do to resolve it?
 
-I think the largest roadblock that I faced when working on the project was figuring out the schema for using the Notion API. I decided to use the Python SDK because I thought it would be fun and usually I do these types of projects using TypeScript & Express but was surprised that the API documentation didn't have many code snippets supported for Python. After a while, I realized the SDKs were almost identical but it would have been nice to have some sort of examples/quickstarts for each SDK to get started with. 
+I think the largest roadblock I faced was learning how to organize the project to write clean code that matches all of the requirements. One of the most frustrating parts of building something is to organize the project in a specific way and then have to change the structure later on when realizing something won't work in the current setup. In this case, deciding how to split up all of the utility functions, and service functions was a challenge for me when taking into account that I would need to expand the program in the future to add additional functionality. 
 
-To figure out how to get the API working properly, I opened an environment following some starter code that the Python SDK did have and started playing with how responses looked in JS and plugging in that data when calling other endpoints. For example, when figuring out how to create pages in a database, I first queried the database, figured out how the properties were displayed on the response, and then modeled the API call to mirror the schema of the properties. 
+To learn how to structure the project, I looked into how other open-source projects organized their own repositories and traced through the imports to see why they made those choices. I also looked into Refactoring.Guru to learn some design patterns that would help make the code intentional and modular for future contributions.
 
 > Do you have any suggestions for improving the API documentation to make it clearer or easier to use?
 
 I think the API documentation is a great resource right now but could use some changes to the UI.
-- Put the code blocks inline because most of the responses and code are cut off for laptop-sized devices
-- Add more quickstart guides for all of the SDK types
+- Put the code blocks & responses inline because most of the responses and code are cut off for laptop-sized devices
+- Add more quickstart guides for all of the SDK types, rather than just JavaScript
 
 ## Resources Used
 - [Notion Developer Docs](https://developers.notion.com/)
 - [How to work with the Notion API in Python](https://www.python-engineer.com/posts/notion-api-python/)
 - [Pytest Docs](https://docs.pytest.org/en/7.1.x/contents.html)
+- [Design Patterns](https://refactoring.guru/design-patterns)
