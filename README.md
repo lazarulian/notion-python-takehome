@@ -51,3 +51,9 @@ I think the API documentation is a great resource right now but could use some c
 - [How to work with the Notion API in Python](https://www.python-engineer.com/posts/notion-api-python/)
 - [Pytest Docs](https://docs.pytest.org/en/7.1.x/contents.html)
 - [Design Patterns](https://refactoring.guru/design-patterns)
+
+## Open Source Libraries Used
+- Pytest for tests
+- Requests for networking
+- Pandas for data manipulation
+- Notion SDK for API calls
